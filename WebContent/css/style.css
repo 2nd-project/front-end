@@ -4795,9 +4795,19 @@ a {
     vertical-align: bottom;
 }
 
-.contact-image {
+.delivery-search {
     width: 100%;
-    padding: 250px 0;
-    -webkit-filter: grayscale(80%);
-    -webkit-filter: brightness(0.30)
+    border: solid 1px grey;
+}
+
+td th {
+    border: solid 1px black;
+}
+
+.title {
+    width: 20%;
+}
+
+.content {
+    width: 80%;
 }
