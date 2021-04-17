@@ -22,27 +22,24 @@
 	<!-- 추가(정희) -->
 	
 <link rel = "stylesheet" type="text/css" href="css/registerEdit.css">
-<script src="./js/jquery-3.2.1.min.js"></script>	
-<script >
 
-$(function() {
 	
-	$("#address").focus(function(){
-		
-		window.open("./popup/jusoPopup.jsp", "_blank", "width=300, height=400");
-		$(this).blur();
-	
-	});
-		
-	
-})
+<script>
 
-function jusoCallBack(roadFullAddr){
+function goPopup(){
 	
-	document.getElementById('addressDetail').value = roadFullAddr;
+	var pop = window.open("./popup/jusoPopup.jsp","pop","width=570,height=420, scrollbars=yes, resizable=yes"); 
+	document.getElementById('address').blur();
 }
-	
-</script>	    
+
+//나중에 활용할 수도 있어서 인수는 더 받음
+function jusoCallBack(roadFullAddr, roadAddrPart1, addrDetail, roadAddrPart2, jibunAddr, zipNo){
+	document.getElementById('address').value = roadAddrPart1;
+	document.getElementById('addressDetail').value = addrDetail + ", " + zipNo;
+}
+
+
+</script>   
 </head>
 <body>
 <!--================ Start Header Menu Area =================-->
@@ -111,7 +108,6 @@ function jusoCallBack(roadFullAddr){
     </div>
 </header>
 <!--================ End Header Menu Area =================-->
-${roadFullAddr}
 <!-- ================ start banner area ================= -->
 <section class="blog-banner-area" id="category">
     <div class="container h-100">
@@ -172,7 +168,7 @@ ${roadFullAddr}
                         </div>
                         <div class="col-md-12 form-group">
 							 <input type="text" class="form-control" id="address" name="address"
-               						placeholder="Address" onfocus="this.placeholder = ''"
+               						placeholder="Address" onclick="goPopup();"
                						onblur="this.placeholder = 'Address'">
                         </div>
                         <div class="col-md-12 form-group">
