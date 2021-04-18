@@ -7,7 +7,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import kosta.dao.order.MemberDAO;
+import kosta.dao.order.MemberDAOImpl;
 
 
 @WebServlet("/asd")
@@ -16,7 +16,7 @@ public class MemberServlet extends HttpServlet {
 	
 	@Override
 	protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		MemberDAO mem = new MemberDAO();
+		MemberDAOImpl mem = new MemberDAOImpl();
 		mem.member();
 	}
 }
