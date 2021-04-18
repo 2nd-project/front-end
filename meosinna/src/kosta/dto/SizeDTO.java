@@ -4,7 +4,7 @@ public class SizeDTO {
 	private String szCode;
 	private int size;
 	
-	
+	public SizeDTO() {}
 	public SizeDTO(String szCode) {
 		this.szCode = szCode;
 	}
