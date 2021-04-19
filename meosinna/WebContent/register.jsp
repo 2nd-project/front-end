@@ -143,15 +143,19 @@ function jusoCallBack(roadFullAddr, roadAddrPart1, addrDetail, roadAddrPart2, ji
             <div class="col-lg-6">
                 <div class="login_form_inner register_form_inner">
                     <h3>Create an account </h3>${roadFullAddr}
-                    <form class="row login_form" action="register" id="register_form" method="post">
+                    <form class="row login_form" action="${pageContext.request.contextPath}/front?key=member&methodName=register" id="register_form" method="post">
                         <div class="col-md-12 form-group">
                             <input type="text" class="form-control" id="name" name="name" placeholder="Username"
                                    onfocus="this.placeholder = ''" onblur="this.placeholder = 'Username'">
                         </div>
                         <div class="col-md-12 form-group">
-                            <input type="text" class="form-control" id="rnumber-front" name="rnumber-front"
+                            <input type="text" class="form-control" id="id" name="id" placeholder="UserId"
+                                   onfocus="this.placeholder = ''" onblur="this.placeholder = 'UserId'">
+                        </div>
+                        <div class="col-md-12 form-group">
+                            <input type="text" class="form-control" id="phone" name="phone"
                                    placeholder="phone" onfocus="this.placeholder = ''"
-                                   onblur="this.placeholder = 'front'">
+                                   onblur="this.placeholder = 'Phone'">
                         </div>
                          <div class="col-md-12 form-group">
                             <input type="text" class="form-control" id="email" name="email" placeholder="Email Address"
@@ -176,6 +180,12 @@ function jusoCallBack(roadFullAddr, roadAddrPart1, addrDetail, roadAddrPart2, ji
                						placeholder="Address Detail" onfocus="this.placeholder = ''"
                						onblur="this.placeholder = 'Address Detail'">
                         </div>
+                        <div class="col-md-12 form-group">
+							 <input type="text" class="form-control" id="jumin" name="jumin"
+               						placeholder="Jumin" onfocus="this.placeholder = ''"
+               						onblur="this.placeholder = 'Jumin'">
+                        </div>
+
                         <div class="col-md-12 form-group">
                             <div class="creat_account">
                                 <input type="checkbox" id="f-option2" name="selector">
