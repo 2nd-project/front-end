@@ -46,9 +46,18 @@ public class MemberDAOImpl implements MemberDAO{
 		Member dbMember = null;
 		String sql = "";
 		try {
+			con = DbUtil.getConnection();
+			ps = con.prepareStatement(sql);
+			ps.setString(1, member.getId());
+			ps.setString(2, member.getPwd());
 			
+			rs = ps.executeQuery();
+			
+			if(rs.next()) {
+				//dbMember = new Member(sql, sql, sql, sql, sql, sql, sql);
+			}
 		}finally {
-			
+			DbUtil.dbClose(rs, ps, con);
 		}
 		return null;
 	}
