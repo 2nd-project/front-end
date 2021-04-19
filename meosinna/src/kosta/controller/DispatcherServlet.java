@@ -26,7 +26,7 @@ public class DispatcherServlet extends HttpServlet {
 		}
 	
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		//System.out.println("¿äÃ»¿Ï·á!");
+		//System.out.println("ìš”ì²­ì™„ë£Œ!");
 		String key = request.getParameter("key");
 		String methodName = request.getParameter("methodName");
 	try {	
