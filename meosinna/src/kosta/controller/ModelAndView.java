@@ -1,10 +1,10 @@
 package kosta.controller;
 /**
- * °¢°¢ÀÇ ControllerÀÇ ±¸ÇöÃ¼°¡ ½ÇÇàµÈ ÈÄ ÀÌµ¿ÇØ¾ßÇÒ ºäÀÇ Á¤º¸¿Í ÀÌµ¿¹æ½ÄÀ» °ü¸®ÇØÁÙ °´Ã¼
+ * ê°ê°ì˜ Controllerì˜ êµ¬í˜„ì²´ê°€ ì‹¤í–‰ëœ í›„ ì´ë™í•´ì•¼í•  ë·°ì˜ ì •ë³´ì™€ ì´ë™ë°©ì‹ì„ ê´€ë¦¬í•´ì¤„ ê°ì²´
  * */
 public class ModelAndView {
-	private String viewName; //ÀÌµ¿ÇÒ ºäÁ¤º¸
-	private boolean isRedirect; //ÀÌµ¿¹æ½Ä(falseÀÌ¸é forward¹æ½Ä, trueÀÌ¸é redirect¹æ½Ä)
+	private String viewName; //ì´ë™í•  ë·°ì •ë³´
+	private boolean isRedirect; //ì´ë™ë°©ì‹(falseì´ë©´ forwardë°©ì‹, trueì´ë©´ redirectë°©ì‹)
 	
 	public ModelAndView() {}
 

@@ -28,13 +28,13 @@
     -->
     
     <!-- DB기술 적용하기 -->
-    <Resource name="jdbc/myoracle" 
+        <Resource name="jdbc/myoracle" 
     		  auth="Container"
               type="javax.sql.DataSource" 
               driverClassName="oracle.jdbc.OracleDriver"
-              url="jdbc:oracle:thin:@127.0.0.1:1521:xe"
-              username="scott" 
-              password="TIGER" 
+              url="jdbc:oracle:thin:@meosinna.cud4xir5ogun.ap-northeast-2.rds.amazonaws.com:1521:ORCL"
+              username="admin" 
+              password="mypassword" 
               maxTotal="20" 
               maxIdle="10"
               maxWaitMillis="-1"/>
