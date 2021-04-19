@@ -27,7 +27,7 @@ public class Member {
 		this(mbName, id, pwd, email, addr, jumin, tel);
 		this.mbCode = mbCode;
 		this.signUpDate = signUpDate;
-	
+	}
 	
 	public int getMbCode() {
 		return mbCode;
