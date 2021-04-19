@@ -1,5 +1,7 @@
 package kosta.dao.order;
 
-public interface MemberDAO {
+import kosta.dto.Goods;
 
+public interface MemberDAO {
+	
 }

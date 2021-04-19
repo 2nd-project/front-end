@@ -26,7 +26,7 @@ public class CartDAOImpl implements CartDAO {
 	 * 
 	 */
 	@Override
-	public int addToCart(Goods goods , SizeDTO sizeDTO) throws SQLException {
+	public int addToCart(Goods goods , int qty, int mbCode) throws SQLException {
 		Connection con = null;
 		PreparedStatement ps = null;
 		String sql="INSERT INTO CART VALUES(?,?,?,?,?,?)";
@@ -37,15 +37,14 @@ public class CartDAOImpl implements CartDAO {
 			ps = con.prepareStatement(sql);
 			ps.setString(1, goods.getGdCode());
 			ps.setString(2, goods.getGdName());
-			ps.setInt(3, sizeDTO.getSize());
+			ps.setInt(3, 100); // 이 부분은 논의 필요. goods에서 어떻게 사이즈코드에 맞는 사이즈를 가져올 수 있는지. 일단 임시 값 100으로 집어 넣음.
 			ps.setInt(4, goods.getPrice());
-			ps.setInt(5, goods.getQty());
-			// ps.setInt(6, ) -> 회원코드는 MemberDTO에서 가져와야 하는지?
-			
+			ps.setInt(5, qty);
+			ps.setInt(6, mbCode);
+			result = ps.executeUpdate();
 		} finally {
 			DbUtil.dbClose(ps, con);
 		}
-		
 		return result;
 	}
 

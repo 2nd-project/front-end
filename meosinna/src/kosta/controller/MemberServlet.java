@@ -17,6 +17,5 @@ public class MemberServlet extends HttpServlet {
 	@Override
 	protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		MemberDAOImpl mem = new MemberDAOImpl();
-		mem.member();
 	}
 }
