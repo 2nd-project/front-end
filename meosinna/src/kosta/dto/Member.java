@@ -10,7 +10,18 @@ public class Member {
 	private String jumin;
 	private String tel;
 	private String signUpDate;
-	
+	public Member() {
+		super();
+		this.mbCode = 1;
+		this.mbName = "동헌김";
+		this.id = "asd123";
+		this.pwd = "123456";
+		this.email = "asd123@naver.com";
+		this.addr = "seongnamsi";
+		this.jumin = "123456-1234567";
+		this.tel = "010-1234-5678";
+		this.signUpDate = "2020-01-01";
+	}
 	public Member(int mbCode, String mbName, String id, String pwd, String email, String addr, String jumin,
 			String tel, String signUpDate) {
 		super();
