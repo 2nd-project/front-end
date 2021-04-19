@@ -114,12 +114,12 @@
                           </tr>
                       </thead>
                       <tbody>
-                      <c:forEach items="${requestScope.list}" var="cart">
+                      <c:forEach items="${sessionScope.list}" var="cart">
                       <tr>
                               <td>
                                   <div class="media">
                                       <div class="d-flex">
-                                          <img src="img/cart/cart1.png" alt="">
+                                          <img src="${sessionScope.str}" alt="" style="width:65px;"> <!-- img/cart/cart1.png -->
                                       </div>
                                       <div class="media-body">
                                           <p>${cart.name}</p>

@@ -2,7 +2,9 @@ package kosta.dao.cart;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 import kosta.dto.CartDTO;
@@ -14,8 +16,26 @@ public class CartDAOImpl implements CartDAO {
 
 	@Override
 	public List<CartDTO> viewCart() throws SQLException{
-		// TODO Auto-generated method stub
-		return null;
+		Connection con = null;
+		PreparedStatement ps = null;
+		ResultSet rs = null;
+		List<CartDTO> list = new ArrayList<CartDTO>();
+		String sql = "SELECT * FROM CART WHERE MB_CODE=1";
+		
+		try {
+			con = DbUtil.getConnection();
+			ps = con.prepareStatement(sql);
+			rs = ps.executeQuery();
+			
+			while(rs.next()) {
+				list.add(new CartDTO(rs.getString(1), rs.getString(2), rs.getInt(3), 
+						rs.getInt(4), rs.getInt(5), rs.getInt(6)));
+			}
+		} finally {
+			DbUtil.dbClose(rs, ps, con);
+		}
+		
+		return list;
 	}
 	/** @author Lee SeungHyun
 	 * 
