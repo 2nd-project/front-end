@@ -28,6 +28,7 @@ public class Member {
 		this.mbCode = mbCode;
 		this.signUpDate = signUpDate;
 	
+	}
 	
 	public int getMbCode() {
 		return mbCode;

@@ -26,7 +26,8 @@ public class MemberDAOImpl implements MemberDAO{
 			ps.setString(3, member.getPwd());
 			ps.setString(4, member.getEmail());
 			ps.setString(5, member.getAddr());
-			ps.setString(6, member.getTel());
+			ps.setString(6, member.getJumin());
+			ps.setString(7, member.getTel());
 
 			result = ps.executeUpdate();
 			
