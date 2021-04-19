@@ -40,8 +40,8 @@ public class MemberController implements Controller {
 		String address = addr1 + addr2;
 		
 		
-		//유효성 체크 
-		//pwd confirmPwd 매치 확인 필요
+		//�쑀�슚�꽦 泥댄겕 
+		//pwd confirmPwd 留ㅼ튂 �솗�씤 �븘�슂
 		Member member = new Member(mbName, id, pwd, email, address, jumin, tel); 
 		
 		memberService.register(member);
@@ -51,6 +51,22 @@ public class MemberController implements Controller {
 		return mv;
 	}
 
+	public ModelAndView login(HttpServletRequest request, HttpServletResponse response) throws Exception{
+		String userId=request.getParameter("userId");
+		String pwd=request.getParameter("pwd");
+		Member member = new Member();
+		
+		Member dbMember = memberService.loginCheck(member);
+		
+		//세션에정보저장
+		HttpSession session = request.getSession();
+		session.setAttribute("loginUser", dbMember.getId());
+		session.setAttribute("loginName", dbMember.getMbName());
+		
+		ModelAndView mv = new ModelAndView("login.jsp", true);
+		
+		return mv;
+	}
 
 	
 }
