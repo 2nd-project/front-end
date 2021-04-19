@@ -2,9 +2,11 @@ package kosta.dao.member;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import kosta.dto.Member;
+import kosta.exception.AuthenticationException;
 import kosta.util.DbUtil;
 
 public class MemberDAOImpl implements MemberDAO{
@@ -34,6 +36,20 @@ public class MemberDAOImpl implements MemberDAO{
 
 		return result;
 		
+	}
+	
+	public Member loginCheck(Member member) throws SQLException, AuthenticationException{
+		Connection con = null;
+		PreparedStatement ps = null;
+		ResultSet rs = null;
+		Member dbMember = null;
+		String sql = "";
+		try {
+			
+		}finally {
+			
+		}
+		return null;
 	}
 	
 }
