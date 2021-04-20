@@ -54,7 +54,7 @@ public class MemberController implements Controller {
 	public ModelAndView login(HttpServletRequest request, HttpServletResponse response) throws Exception{
 		String userId=request.getParameter("userId");
 		String pwd=request.getParameter("pwd");
-		Member member = new Member();
+		Member member = new Member(userId, pwd);
 		
 		Member dbMember = memberService.loginCheck(member);
 		
@@ -63,7 +63,7 @@ public class MemberController implements Controller {
 		session.setAttribute("loginUser", dbMember.getId());
 		session.setAttribute("loginName", dbMember.getMbName());
 		
-		ModelAndView mv = new ModelAndView("login.jsp", true);
+		ModelAndView mv = new ModelAndView("index.jsp", true);
 		
 		return mv;
 	}

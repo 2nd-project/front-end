@@ -12,6 +12,12 @@ public class Member {
 	private String signUpDate;
 	
   public Member() {}	
+  	
+  	public Member(String id, String pwd) {
+  		this.id = id;
+  		this.pwd = pwd;
+  	}
+  	
 	public Member(String mbName, String id, String pwd, String email, String addr, String jumin, String tel) {
 		this.mbName = mbName;
 		this.id = id;

@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -108,10 +109,14 @@
 						</div>
 					</div>
 				</div>
+				<c:choose>
+					<c:when test="${empty loginUser}">
 				<div class="col-lg-6">
 					<div class="login_form_inner">
 						<h3>Log in to enter</h3>
 						<form class="row login_form" action="${pageContext.request.contextPath}/front" id="contactForm" method="" >
+						<input type="hidden" name="key" value = "member" />
+						<input type="hidden" name="methodName" value = "login" />
 							<div class="col-md-12 form-group">
 								<input type="text" class="form-control" id="userId" name="userId" placeholder="Username" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Username'">
 							</div>
@@ -133,6 +138,8 @@
 				</div>
 			</div>
 		</div>
+		</c:when>
+		</c:choose>
 	</section>
 	<!--================End Login Box Area =================-->
 
