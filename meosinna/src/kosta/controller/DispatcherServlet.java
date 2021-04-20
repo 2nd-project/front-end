@@ -45,7 +45,7 @@ public class DispatcherServlet extends HttpServlet {
 		}
 		
 	}catch(Exception e){
-		e.printStackTrace();
+		response.sendRedirect("error.jsp"); //아이디 비밀번호 틀릴시 이동
 	}
 	}
 	

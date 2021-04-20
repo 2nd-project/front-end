@@ -18,6 +18,7 @@
   <link rel="stylesheet" href="vendors/nouislider/nouislider.min.css">
 
   <link rel="stylesheet" href="css/style.css">
+  
 </head>
 <body>
 	<!--================ Start Header Menu Area =================-->
