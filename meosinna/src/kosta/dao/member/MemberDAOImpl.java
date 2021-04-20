@@ -44,7 +44,7 @@ public class MemberDAOImpl implements MemberDAO{
 		PreparedStatement ps = null;
 		ResultSet rs = null;
 		Member dbMember = null;
-		String sql = "";
+		String sql = "select * from member where id=? and pwd=?";
 		try {
 			con = DbUtil.getConnection();
 			ps = con.prepareStatement(sql);
@@ -54,12 +54,12 @@ public class MemberDAOImpl implements MemberDAO{
 			rs = ps.executeQuery();
 			
 			if(rs.next()) {
-				//dbMember = new Member(sql, sql, sql, sql, sql, sql, sql);
+				dbMember = new Member(rs.getString(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5), rs.getString(6), rs.getString(7));
 			}
 		}finally {
 			DbUtil.dbClose(rs, ps, con);
 		}
-		return null;
+		return dbMember;
 	}
 	
 }
