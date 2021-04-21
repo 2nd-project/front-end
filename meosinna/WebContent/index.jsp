@@ -55,15 +55,18 @@
 							</li>
 							<li class="nav-item submenu dropdown">
                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-                  aria-expanded="false">Pages</a>
+                  aria-expanded="false">멤버</a>
                 <ul class="dropdown-menu">
                   <%if(session.getAttribute("loginUser") == null){ %>
-                  <li class="nav-item"><a class="nav-link" href="login.jsp">Login</a></li>
-                  <li class="nav-item"><a class="nav-link" href="register.jsp">Register</a></li>
-                  <li class="nav-item"><a class="nav-link" >확인용 : ${member.id}</a></li>
-                  <li class="nav-item"><a class="nav-link" href="tracking-order.html">Tracking</a></li>
+                  <li class="nav-item"><a class="nav-link" href="login.jsp">로그인</a></li>
+                  <li class="nav-item"><a class="nav-link" href="register.jsp">회원가입</a></li>
+                  <li class="nav-item"><a class="nav-link" href="tracking-order.html">고객센터</a></li>
                   <%}else{ %>
-                  <li class="nav-item"><a class="nav-link" href="tracking-order.html">Tracking</a></li>
+                  <li class="nav-item"><a class="nav-link" href="myPage.jsp">마이페이지</a></li>
+                  <li class="nav-item"><a class="nav-link" href="cart.jsp">장바구니</a></li>
+                  <li class="nav-item"><a class="nav-link" href="like.jsp">좋아요</a></li>
+                  <li class="nav-item"><a class="nav-link" href="tracking-order.html">주문배송조회</a></li>
+                  <li class="nav-item"><a class="nav-link" href="tracking-order.html">고객센터</a></li>
                   <%} %>
                 </ul>
               <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
@@ -73,8 +76,10 @@
               <li class="nav-item"><button><i class="ti-search"></i></button></li>
               <li class="nav-item"><button onclick="location.href='cart.jsp' "><i class="ti-shopping-cart"></i><span class="nav-shop__circle">3</span></button> </li>
               <%if(session.getAttribute("loginUser") == null) {%>
+              
               <li class="nav-item"><a class="button button-header" href="${pageContext.request.contextPath}/login.jsp">Buy Now</a></li>
               <%}else{ %>
+              <li class="nav-item"><button><a class="like" href="#">좋아요</a></li>
               <li class="nav-item"><a class="button button-header" href="${pageContext.request.contextPath}/front?key=member&methodName=logout"">logout</a></li>
               <%} %>
             </ul>
