@@ -82,11 +82,11 @@
 		<div class="container h-100">
 			<div class="blog-banner">
 				<div class="text-center">
-					<h1>Shop Category</h1>
+					<h1>마이페이지</h1>
 					<nav aria-label="breadcrumb" class="banner-breadcrumb">
             <ol class="breadcrumb">
-              <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active" aria-current="page">Shop Category</li>
+              <li class="breadcrumb-item"><a href="#">..</a></li>
+              <li class="breadcrumb-item active" aria-current="page">님 환영합니다.</li>
             </ol>
           </nav>
 				</div>

@@ -2,7 +2,9 @@ package kosta.controller;
 
 import java.io.IOException;
 
+
 import java.sql.SQLException;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -75,6 +77,16 @@ public class MemberController implements Controller {
 		session.invalidate();
 		
 		return new ModelAndView("index.jsp", true);
+	}
+	
+	public ModelAndView selectById(HttpServletRequest request, HttpServletResponse response)
+			throws Exception{
+		//Member member = MemberService.selectById();
+		//request.setAttribute("member", member); //${requestScope.list} ��밡��
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("myPage.jsp");
+		
+		return mv;
 	}
 
 	
