@@ -18,6 +18,7 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+
   <!--================ Start Header Menu Area =================-->
 	<header class="header_area">
     <div class="main_menu">
@@ -56,7 +57,7 @@
                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
                   aria-expanded="false">Pages</a>
                 <ul class="dropdown-menu">
-                  <li class="nav-item"><a class="nav-link" href="login.html">Login</a></li>
+                  <li class="nav-item"><a class="nav-link" href="login.jsp">Login</a></li>
                   <li class="nav-item"><a class="nav-link" href="register.jsp">Register</a></li>
                   <li class="nav-item"><a class="nav-link" >확인용 : ${member.id}</a></li>
                   <li class="nav-item"><a class="nav-link" href="tracking-order.html">Tracking</a></li>
@@ -67,7 +68,11 @@
             <ul class="nav-shop">
               <li class="nav-item"><button><i class="ti-search"></i></button></li>
               <li class="nav-item"><button onclick="location.href='cart.jsp' "><i class="ti-shopping-cart"></i><span class="nav-shop__circle">3</span></button> </li>
+              <%if(session.getAttribute("loginUser") == null) {%>
               <li class="nav-item"><a class="button button-header" href="${pageContext.request.contextPath}/login.jsp">Buy Now</a></li>
+              <%}else{ %>
+              <li class="nav-item"><a class="button button-header" href="${pageContext.request.contextPath}/front?key=member&methodName=logout"">logout</a></li>
+              <%} %>
             </ul>
           </div>
         </div>

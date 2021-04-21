@@ -1,6 +1,7 @@
 package kosta.controller;
 
 import java.io.IOException;
+
 import java.sql.SQLException;
 
 import javax.servlet.ServletException;
@@ -12,6 +13,7 @@ import javax.servlet.http.HttpSession;
 
 import kosta.dao.member.MemberDAOImpl;
 import kosta.dto.Member;
+import kosta.controller.ModelAndView;
 import kosta.service.MemberService;
 
 
@@ -66,6 +68,13 @@ public class MemberController implements Controller {
 		ModelAndView mv = new ModelAndView("index.jsp", true);
 		
 		return mv;
+	}
+	
+	public ModelAndView logout(HttpServletRequest request, HttpServletResponse response) throws Exception{
+		HttpSession session = request.getSession();
+		session.invalidate();
+		
+		return new ModelAndView("index.jsp", true);
 	}
 
 	

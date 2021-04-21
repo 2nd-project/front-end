@@ -30,6 +30,7 @@ public class DispatcherServlet extends HttpServlet {
 		String key = request.getParameter("key");
 		String methodName = request.getParameter("methodName");
 	try {	
+		
 		Class<?> clz = clzMap.get(key);
 		Method method = clz.getMethod(methodName, HttpServletRequest.class, HttpServletResponse.class);
 		
@@ -45,7 +46,7 @@ public class DispatcherServlet extends HttpServlet {
 		}
 		
 	}catch(Exception e){
-		response.sendRedirect("error.jsp"); //아이디 비밀번호 틀릴시 이동
+		response.sendRedirect("error.jsp");
 	}
 	}
 	
