@@ -48,6 +48,7 @@ public class DispatcherServlet extends HttpServlet {
 	}catch(Exception e){
 		response.sendRedirect("error.jsp");
 	}
+	
 	}
 	
 

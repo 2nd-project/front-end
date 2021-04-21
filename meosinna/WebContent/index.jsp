@@ -57,10 +57,14 @@
                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
                   aria-expanded="false">Pages</a>
                 <ul class="dropdown-menu">
+                  <%if(session.getAttribute("loginUser") == null){ %>
                   <li class="nav-item"><a class="nav-link" href="login.jsp">Login</a></li>
                   <li class="nav-item"><a class="nav-link" href="register.jsp">Register</a></li>
                   <li class="nav-item"><a class="nav-link" >확인용 : ${member.id}</a></li>
                   <li class="nav-item"><a class="nav-link" href="tracking-order.html">Tracking</a></li>
+                  <%}else{ %>
+                  <li class="nav-item"><a class="nav-link" href="tracking-order.html">Tracking</a></li>
+                  <%} %>
                 </ul>
               <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
             </ul>
